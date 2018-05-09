@@ -1,0 +1,138 @@
+img {
+  object-fit: cover;
+  width:100%;
+  height: 200px;
+  min-height: 200px;
+  background-color: white;
+}
+
+.btn{
+    width: 100%;
+}
+
+.invalid_button{
+    border-color: red;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+   opacity: 1;
+}
+
+.onHoverA:hover { 
+    background-color: darkgray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mat-form-field{
+    width:30% !important;
+}
+
+.ng-star-inserted{
+    margin-top: 1.5%;
+}
+
+.is-active {
+  position: relative;
+  font-weight: bold;
+  background-color: rgb(255,64,129);
+}
+
+.is-active:after {
+  /*content: "";
+  width: 70%;
+  height: 2px;*/
+  /*display: block;
+  position: absolute;*/
+  background-color: rgb(255,64,129);
+  /*left: 22%;*/
+}
+
+.is-active:after{
+    margin-left: -6% !important;
+}
+
+.expansionMarginBorderFix{
+    margin-left:  -8%;
+    margin-right: -8%;
+    box-shadow:  none !important;
+}
+
+.mdl-card{
+    width: auto;
+}
+
+.mdl-card__title{
+    display:block;
+}
+/*
+.tp-box__front {
+  -webkit-transform : rotateY(0deg);
+  -ms-transform     : rotateY(0deg);
+  transform         : rotateY(0deg);
+}
+
+.tp-box__back {
+  -webkit-transform : rotateY(-180deg);
+  -ms-transform     : rotateY(-180deg);
+  transform         : rotateY(-180deg);
+}
+
+.tpbox{
+    position: relative;
+    transform: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform : transform 1s;
+    -ms-transform: transform 1s;
+}
+
+.tpbox__side{
+    position: absolute;
+    user-select: none;
+    -webkit-backface-visibility: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    backface-visibility: hidden;
+}*/
+
+
+.card-selected{
+    background-color: gainsboro;
+}
+
+.menu-nav{
+    overflow-x: auto;
+    display: inline-flex;
+    height: auto;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+    .cardCategory{
+        width:  130px;
+    }
+}
+
+.cardCategory{
+    box-shadow: none !important;
+    border: 1px solid  lightgray;
+}
+
+.navKeys{
+    opacity: 1;
+    z-index: 1;position: sticky;
+    top:30%;
+    background-color: black;
+    color: white;
+    font-size: 10px;
+}
+
+

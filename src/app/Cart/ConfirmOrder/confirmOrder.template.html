@@ -1,0 +1,81 @@
+<mat-horizontal-stepper [linear]="true" #stepper="matHorizontalStepper">
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Enter Your Details:</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="First name" [(ngModel)]="globals.userInfo.Fname" formControlName="firstCtrl" required>
+          </mat-form-field><br/>
+          <mat-form-field>
+            <input matInput placeholder="Last name" formControlName="lastCtrl" [(ngModel)]="globals.userInfo.Lname" required>
+          </mat-form-field><br/>
+          <mat-form-field>
+            <span matPrefix>+91 &nbsp;</span>
+            <input type="phone" #phoneNumber matInput placeholder="Phone number" formControlName="phoneCtrl" [(ngModel)]="globals.userInfo.phNo" required>
+            <mat-hint align="end">{{phoneNumber.value.length}} / 10</mat-hint>
+          </mat-form-field><br/>
+          <mat-form-field>
+            <input matInput placeholder="Email" formControlName="emailCtrl" [(ngModel)]="globals.userInfo.email" required>
+          </mat-form-field><br/>
+        <mat-form-field>
+            <textarea matInput placeholder="Enter Your Address" [(ngModel)]="globals.userInfo.address" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5" formControlName="addrCtrl" required></textarea> 
+        </mat-form-field><i class="material-icons" style="color: aqua;opacity: 0.5" matTooltip="Get Current Location" (click) = "getCurrentLocation()">&#xE55C;</i><br/>
+          <div style="margin-left:  70%;">
+            <button mat-button matStepperNext style="color: mediumseagreen">Next</button>
+          </div>
+        </form>
+
+      </mat-step>
+      <mat-step clas="no-padding">
+        <!--<form [formGroup]="secondFormGroup">-->
+          <ng-template matStepLabel>Confirm Your Order</ng-template>
+          <!--<mat-form-field>
+            <input matInput placeholder="Address" formControlName="secondCtrl" required>
+          </mat-form-field>-->
+            <table class="table table-hover table-sm table-responsive">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Tax</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let product of globals.cart.products">
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.tax}}</td>
+                <td>{{product.total}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+              <div class="col-md-6 col-sm-12 col-lg-6">
+                <strong>Total</strong>: {{globals.cart.bill}} <br/>
+                <strong>Quantity</strong>: {{globals.cart.quantity}}<br/>
+                <strong>Phone Number</strong>: {{globals.userInfo.phNo}}<br/>
+                <strong>Email</strong>: {{globals.userInfo.email}}<br/>
+              </div>
+              <div class="col-md-6 col-sm-12 col-lg-6">
+                  <strong>Delivered To:</strong> <br/>
+                  {{globals.userInfo.Fname}} {{globals.userInfo.Lname}},
+                  {{globals.userInfo.address}}
+              </div>
+          </div>
+          <div style="margin-left:  60%;margin-top: 10%">
+            <button mat-button matStepperPrevious color="warn">Back</button>
+            <button mat-button matStepperNext style="color: mediumseagreen">Confirm</button>
+          </div>
+<!--        </form>-->
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        You are now done.
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>

@@ -1,0 +1,106 @@
+<div class="row">
+   <!-- <div class="col-sm-12 col-xs-12 col-lg-12 col-md-12" id="filter" style="position: sticky;top: 10px;z-index: 2;margin-top: 2%">
+        <div class="col-md-4 col-lg-4"></div>
+        <mat-expansion-panel class="col-md-4 col-lg-4">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Filters
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ng-template matExpansionPanelContent>
+                <mat-form-field style="width: 100% !important">
+                    <input type="text" matInput placeholder="Search" [(ngModel)]="this.dashboardService.search"/>
+                    <a mat-button *ngIf="this.dashboardService.search" matSuffix mat-icon-button aria-label="Clear" (click)="this.dashboardService.search=''">
+                        <mat-icon class="onHoverA">close</mat-icon>
+                    </a>
+                </mat-form-field>
+                
+                <mat-expansion-panel class="expansionMarginBorderFix">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Categories
+                        </mat-panel-title>
+                        <mat-panel-description>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                    <mat-chip-list>
+                        <div *ngFor="let category of categories">
+                            <mat-chip [routerLink]="[category.id]" routerLinkActive='is-active'>{{category.name}}</mat-chip>&nbsp; &nbsp; 
+                        </div>
+                    </mat-chip-list>
+                </ng-template>
+                </mat-expansion-panel>
+            </ng-template>
+        </mat-expansion-panel>
+        <div class="col-md-4 col-lg-4"></div>
+    </div>-->
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+        <mat-card>
+            <div class="menu-nav"   #itemRef>
+                <button mat-icon-button (click) = "scrollLeft()" class="navKeys" style="left: 3%" [style.opacity]="leftReached?0.2:0.5" *ngIf="overFlown">
+                    <i class="material-icons">keyboard_arrow_left</i>
+                </button>
+                
+                <div class ="col-sm-6 col-xs-6 col-md-3 col-lg-3" *ngFor="let category of categories; let i = index">
+                    <div [@flipState]="flip[i]" (click) = 'toggleFlip(i)'>
+                        <mat-card [routerLink]="[category.id]" class="cardCategory" routerLinkActive='card-selected'> <center><b>{{category.name}}</b></center> </mat-card>
+                    </div>
+                </div>
+                
+                <button mat-icon-button (click) = "scrollRight()" class="navKeys" style="right: 3%;" [style.opacity]="rightReached?0.2:0.5" *ngIf="overFlown">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </button>
+            </div>
+            <mat-divider></mat-divider>
+           
+            <div>
+               <!-- <center>-->
+                <!--<mat-expansion-panel class="expansionMarginBorderFix">
+
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Filters
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                        <mat-panel-description>
+                        </mat-panel-description>
+                        <matExpansionPanelContent>
+                        <mat-form-field style="margin-top: 5%">
+                        <input type="text" matInput placeholder="Search" [(ngModel)]="this.dashboardService.search"/>
+                        <a mat-button *ngIf="this.dashboardService.search" matSuffix mat-icon-button aria-label="Clear" (click)="this.dashboardService.search=''">
+                            <mat-icon class="onHoverA">close</mat-icon>
+                        </a>
+                    </mat-form-field>
+                        </matExpansionPanelContent>
+                
+                </mat-expansion-panel>-->
+                    
+                <!--</center>-->
+            </div>
+            
+            <div>
+                <router-outlet></router-outlet>
+            </div>
+                
+            <!--<div *ngFor="let category of categories">
+                <mat-accordion>
+                    <mat-expansion-panel id="category{{category.id}}" style="box-shadow: none" [expanded]="this.dashboardService.step == category.id" [routerLink]="[category.id]">
+                        <mat-expansion-panel-header style="background-color: #dadada;">
+                            <mat-panel-title>
+                               <b>{{category.name}}</b>
+                            </mat-panel-title>
+                            <mat-panel-description>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <ng-template matExpansionPanelContent>
+                            <router-outlet></router-outlet>
+                        </ng-template>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>-->
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+      
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> <center><b>Name</b></center> </mat-header-cell>
+      <mat-cell *matCellDef="let element"> <center>{{element.name}} </center></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef><center><b> Price </b></center></mat-header-cell>
+      <mat-cell *matCellDef="let element"><center> {{element.price}}</center> </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity" >
+      <mat-header-cell *matHeaderCellDef><center><b> Quantity </b></center></mat-header-cell>
+      <mat-cell *matCellDef="let element"><center><span  style="display: inline-table"><i class="material-icons" matTooltip="Decrease Quantity" style="vertical-align: middle;color: orangered;font-size: 17px;" (click)="decreaseQuantity(element)" [ngStyle] ="{'opacity':element.quantity == 1? '0.5':'1'}" > remove_circle_outline</i><span>&nbsp;{{element.quantity}}&nbsp;</span><i class="material-icons" style="vertical-align: middle;color: mediumseagreen;font-size: 17px;" (click)="increaseQuantity(element)" matTooltip="Increase Quantity">control_point</i></span></center></mat-cell>
+    </ng-container>
+      
+    <ng-container matColumnDef="tax">
+      <mat-header-cell *matHeaderCellDef> <center><b>Tax</b> </center></mat-header-cell>
+      <mat-cell *matCellDef="let element"><center> {{element.tax}}</center> </mat-cell>
+    </ng-container>
+      
+    <ng-container matColumnDef="total">
+      <mat-header-cell *matHeaderCellDef> <center><b>Total</b> </center></mat-header-cell>
+      <mat-cell *matCellDef="let element"> <center>{{element.total}}</center> </mat-cell>
+    </ng-container>
+      
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef> <center><b>Action</b> </center></mat-header-cell>
+        <mat-cell *matCellDef="let element"> <center><i class="material-icons" style="vertical-align: middle;color: red;" matTooltip="Delete"  (click)="deleteElement(element)">clear</i> </center></mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    
+   </mat-table>
+    <div style="background:  white;padding: 2%;">
+        <div style="text-align: center;font-family: Roboto,Helvetica Neue,sans-serif;font-size:  large;" *ngIf="globals.cart.products.length==0"> <b>No products added</b></div>
+        <div style="text-align:  right;margin-right: 10%;font-family: Roboto,Helvetica Neue,sans-serif;" *ngIf="globals.cart.products.length!=0"> <b>Bill Payable :</b> {{globals.cart.bill | number}}</div>
+    </div>
+    
+    <div style="padding-bottom: 2%;background-color: white" *ngIf="globals.cart.products.length!=0">
+        <button mat-raised-button style="margin-left: 5%;background-color:mediumseagreen;color: white" (click) = "placeOrder(mytemplate)"  routerLink="confirmOrder" skipLocationChange>Proceed To Checkout</button>
+        <button mat-raised-button style="margin-left: 1%" color='warn' (click) = "clearCart()">Clear Cart</button>
+    </div>
+    
+    <ng-template #mytemplate>
+        <router-outlet></router-outlet>
+    </ng-template>
+    
+    
+</div>

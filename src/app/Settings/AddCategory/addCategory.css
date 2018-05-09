@@ -1,0 +1,13 @@
+.highlight{
+	border:solid 0.0157px #0d0;
+    z-index: 999;
+}
+
+.mat-form-field{
+    width:100% !important;
+}
+
+
+.mdl-layout{
+    height: auto;
+}

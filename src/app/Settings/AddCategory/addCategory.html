@@ -1,0 +1,23 @@
+<div class="panel panel-primary">
+        <div class="panel-heading">Add Category</div>
+        <div class="panel-body">
+            <div class="row">
+                <mat-grid-list cols="1">
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                        <mat-form-field>
+                            <input matInput [(ngModel)]="category.name" placeholder="Enter Category Name"/>
+                        </mat-form-field>
+                    </div>
+                </mat-grid-list>
+            </div>
+        </div>
+            
+           
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-xs-10 col-md-11">
+                    <button mat-raised-button style="background-color: #337ab7;color:white" (click)="saveCategory()">Save</button>
+                </div>
+            </div>
+        </div>
+</div>

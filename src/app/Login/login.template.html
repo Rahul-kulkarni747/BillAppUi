@@ -1,0 +1,18 @@
+ <ng-template #mytemplate>
+    <h1 mat-dialog-title>Login</h1>
+    <div mat-dialog-content>
+     <form [formGroup]="firstFormGroup">
+          <mat-form-field>
+            <input matInput placeholder="User Name" [(ngModel)]="loginObj.username" formControlName="userNameCtrl" required>
+          </mat-form-field><br/>
+          <mat-form-field>
+            <input type="password" matInput placeholder="Password" formControlName="passwordCtrl" [(ngModel)]="loginObj.password" required>
+          </mat-form-field><br/>
+        </form>
+     </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onLoginClick()" >Login</button>
+        <button mat-button (click)="onCancelClick()">Cancel</button>
+    </div>
+
+ </ng-template>

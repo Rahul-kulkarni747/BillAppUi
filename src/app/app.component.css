@@ -1,0 +1,74 @@
+
+mat-sidenav{
+    width: 30%;
+    background-color: lightslategray;
+}
+
+mat-sidenav-container{
+    height:100vh;
+}
+
+header{
+}
+
+mat-sidenav{
+     border-right: solid #e7ce00 medium;
+}
+
+
+.sideNavCard{
+    margin-top:20%;
+    width:70%;
+    background-color: lightslategray;
+    border: none !important;
+    box-shadow: none !important;
+    height:200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.avatarImage{
+    border-radius: 50%;
+    width:90%;
+    border: solid #e7ce00 !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+::ng-deep .mat-menu-panel {
+  max-width: none !important;
+  min-width: 30vw !important;
+  background-color: #789 !important;
+  color:white !important;
+  box-shadow: none !important;
+}
+
+.menu-button{
+    width:100%;
+    border-bottom: solid #e7ce00 thin;
+    color:black;
+    background-color: white;
+}
+
+.heading{
+    font: bold 1.5em "Lucida Console";
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: red 0px 1px 2px;
+    color: lightblue;
+}
+
+.heading-top{
+    color: #e7ce00;
+    border-top: solid #e7ce00 medium;
+    border-bottom: dotted #e7ce00 thin;
+}
+
+/*.portfolio-logo-row{
+    align-self:  auto;
+}*/
+

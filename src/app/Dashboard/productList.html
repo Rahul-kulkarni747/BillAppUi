@@ -1,0 +1,30 @@
+<div class="portfolio-max-width">
+    <div *ngIf ="lengthCheck(products | filter:this.dashboardService.search)" class="portfolio-max-width"> <center><h3>No Products :( </h3></center></div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"  *ngFor="let product of products | filter:this.dashboardService.search">
+    
+            <div class="mdl-card portfolio-card" style="box-shadow:  none;border: 1px solid lightgray;">
+                <div class="mdl-card__media" style="align-self:  center;background-color: white;height:100%;">
+                    <img class="article-image" [src]="'data:image/png;base64,'+product.image| safeHtml" border="0" alt="Product Image" />
+                </div>
+                <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text" style="font-size: medium"><b>{{product.name}}</b></h2>
+                        <h4  style="font-size: medium">&#x20b9;.{{product.price}}</h4>
+                </div>
+                <!--<div class="mdl-card__supporting-text">
+        {{product.desc}}
+        </div>-->
+                <div class="mdl-card__actions mdl-card--border">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                <input type="number" class="btn btn-default"  [(ngModel)]="product.quantity" name="price" placeholder="Quantity" (click)="quantityTouched(product)" [ngClass]="{true:'invalid_button',false:''}[product.error]"/>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <a class="btn" style="color: hotpink" (click)="addToCart(product)"><b>Add To Cart</b></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

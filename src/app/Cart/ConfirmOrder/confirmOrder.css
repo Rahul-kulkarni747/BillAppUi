@@ -1,0 +1,18 @@
+@media only screen and (max-width: 600px) {
+    ::ng-deep .mat-dialog-container{
+        padding: 10px !important;
+    }
+
+    ::ng-deep .mat-horizontal-content-container{
+        padding: 0 !important;
+        padding-left: 5% !important;
+    }
+    
+    ::ng-deep .table{
+        font-size: smaller !important;
+    }
+    
+    ::ng-deep .mat-horizontal-stepper-header{
+        padding: 0 5px !important;
+    }
+}
