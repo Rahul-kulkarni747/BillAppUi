@@ -1,6 +1,11 @@
-# SomeApp
+# Bill Application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+
+
+## Installing the app
+
+To download and install all the node modules present run command npm install.
 
 ## Development server
 
