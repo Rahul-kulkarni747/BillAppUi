@@ -12,7 +12,7 @@ import { routerTransition } from './globalVariables';
 
 export class AppComponent implements OnInit{
     
-    constructor ( private globals: Globals
+    constructor ( public globals: Globals
     ) {};
     
     ngOnInit(){

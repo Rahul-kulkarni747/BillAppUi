@@ -14,12 +14,10 @@ export class ProductService {
     public snackBar: MatSnackBar
   ) {}
 
-  saveProduct(data) {
+  saveProduct(data): Observable<ResponseBody> {
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         let url = GlobalVariable.BASE_API_URL+'addProduct';     
-        this.http.post<ResponseBody>(url, data,{headers: headers}).subscribe(response => {
-             let snackBar=this.snackBar.open(response.body.payload.resp);
-        })
+        return this.http.post<ResponseBody>(url, data, {headers: headers});
   }
     
     fetchCategory(): Observable<ResponseBody> {

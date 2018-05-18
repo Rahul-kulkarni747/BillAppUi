@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
     snapshot:RouterStateSnapshot;
     x:number = 1;
     
-    constructor(private globals: Globals, private dialog: MatDialog, private snackBar: MatSnackBar, private router:Router) {
+    constructor(public globals: Globals, private dialog: MatDialog, private snackBar: MatSnackBar, private router:Router) {
         this.snapshot = router.routerState.snapshot;
     }
     

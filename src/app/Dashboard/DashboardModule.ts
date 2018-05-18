@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { SafeHtml } from '../pipes/safeHtml';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule, MatExpansionModule, MatCardModule, MatButtonModule,
-        MatIconModule, MatChipsModule, MatGridListModule, MatDividerModule, MatTooltipModule } from '@angular/material';
+        MatIconModule, MatChipsModule, MatGridListModule, MatDividerModule, MatTooltipModule,MatProgressSpinnerModule } from '@angular/material';
 import { FilterPipe } from '../pipes/filter';
 import { ProductListComponent } from './productList.component';
 import { DashboardService } from './productFetch.service';
@@ -29,7 +29,8 @@ import { DashboardService } from './productFetch.service';
     MatChipsModule,
     MatGridListModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatProgressSpinnerModule
   ],
   providers: [ DashboardService ],
   schemas: [ NO_ERRORS_SCHEMA ]

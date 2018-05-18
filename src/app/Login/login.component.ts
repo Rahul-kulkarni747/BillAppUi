@@ -1,4 +1,4 @@
-import { Component,OnInit,ViewChild,TemplateRef,AfterViewInit } from '@angular/core';
+import { Component,OnInit,ViewChild,TemplateRef,AfterViewInit,NO_ERRORS_SCHEMA } from '@angular/core';
 import { Dialog } from '../Dialog/dialog.component';
 import { MatDialog } from '@angular/material';
 import { Router,RouterStateSnapshot } from '@angular/router';
@@ -42,7 +42,8 @@ export class LoginComponent implements AfterViewInit,OnInit {
         setTimeout(()=> {
             this.dialogRef = this.dialog.open(this.templateRef, {
                 disableClose:true,
-                hasBackdrop: true
+                hasBackdrop: true,
+                width:"40%"
             });
             
             this.dialogRef.afterClosed().subscribe(result =>{

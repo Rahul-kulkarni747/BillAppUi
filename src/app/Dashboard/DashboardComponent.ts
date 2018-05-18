@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChildren } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, NavigationStart, NavigationCancel, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Product } from './../Settings/Product';
 import { Category } from '../Settings/AddCategory/Category';
 import { DashboardService } from './productFetch.service';
@@ -32,16 +32,32 @@ export class dashboardComponent implements OnInit{
     @ViewChildren('itemRef') itemRef;
     left = 0;
     overFlown = false;
+    loading;
     leftReached = true;
     rightReached = false;
     
-    constructor(private dashboardService:DashboardService, private route: ActivatedRoute) {
+    constructor(private dashboardService:DashboardService, private route: ActivatedRoute, private router:Router) {
+        this.loading = false;
     }
     
     ngAfterViewInit() {
         this.itemRef.changes.subscribe(t =>{
             this.categoriesChanged();
         });
+        
+        
+        this.router.events
+            .subscribe((event) => {
+                if(event instanceof NavigationStart) {
+                    this.loading = true;
+                }
+                else if (
+                    event instanceof NavigationEnd || 
+                    event instanceof NavigationCancel
+                    ) {
+                    this.loading = false;
+                }
+            });
     }
 
     ngOnInit() {
@@ -108,5 +124,6 @@ export class dashboardComponent implements OnInit{
         
         this.itemRef._results[0].nativeElement.scroll({ left:this.left, behavior: 'smooth' });
     }
+    
     
 }

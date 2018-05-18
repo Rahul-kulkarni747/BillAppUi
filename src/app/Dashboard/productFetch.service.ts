@@ -24,6 +24,7 @@ export class DashboardService {
     }
     
     fetchCategory(): Observable<ResponseBody> {
+        console.log(GlobalVariable.BASE_API_URL);
         let url = GlobalVariable.BASE_API_URL + 'fetchCategory';      
         return this.http.get<ResponseBody>(url);
     }

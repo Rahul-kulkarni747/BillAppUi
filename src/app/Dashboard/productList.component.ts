@@ -22,7 +22,7 @@ export class ProductListComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private globals: Globals,
-        private dashboardService: DashboardService,
+        public dashboardService: DashboardService,
         public dialog: MatDialog,
         public snackBar: MatSnackBar
     ) {}

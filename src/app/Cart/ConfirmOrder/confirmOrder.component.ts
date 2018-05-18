@@ -19,7 +19,7 @@ export class ConfirmOrder implements OnInit {
     dataSource = new MatTableDataSource<Product>(this.globals.cart.products);
     
     
-    constructor(private globals: Globals, private _formBuilder: FormBuilder,  private cdr: ChangeDetectorRef){
+    constructor(public globals: Globals, private _formBuilder: FormBuilder,  private cdr: ChangeDetectorRef){
         
     }
     

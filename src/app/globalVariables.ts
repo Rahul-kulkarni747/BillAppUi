@@ -22,7 +22,7 @@ export const routerTransition = trigger('routerTransition', [
 ])
 
 export const GlobalVariable = Object.freeze({
-     BASE_API_URL: 'http://localhost:8081/billapp/',
+     BASE_API_URL: 'http://BillApp-env.nfpzjbdshn.ap-south-1.elasticbeanstalk.com/',
  });
 
 @Injectable()

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule, MatCardModule} from '@angular/material';
 import { MatMenuModule, MatSnackBarModule, MatDialogModule,MatInputModule} from '@angular/material';
@@ -46,6 +46,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   providers: [Globals],
   bootstrap: [AppComponent],
-  entryComponents: [ Dialog, SnackBar ]
+  entryComponents: [ Dialog, SnackBar ],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }

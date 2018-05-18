@@ -80,8 +80,13 @@
                     
                 <!--</center>-->
             </div>
-            
-            <div>
+            <center>
+                <div [hidden]="!loading" class="loader" style="margin-top: 10%">
+                    <mat-spinner></mat-spinner>
+                    <h2>Loading...</h2>
+                </div>
+            </center>
+            <div [hidden]="loading">
                 <router-outlet></router-outlet>
             </div>
                 

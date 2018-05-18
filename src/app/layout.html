@@ -15,7 +15,7 @@
             <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
                 <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
                    <a class="mdl-navigation__link" routerLink="buyProduct" routerLinkActive='is-active'><i class="material-icons" style="margin-bottom: 3%;">watch </i>&nbsp;&nbsp;Buy</a>
-                    <a class="mdl-navigation__link" routerLink="settings" routerLinkActive='is-active'><i class="material-icons" style="margin-bottom: 3%;">add</i>&nbsp; Settings</a>
+<!--                    <a class="mdl-navigation__link" routerLink="settings" routerLinkActive='is-active'><i class="material-icons" style="margin-bottom: 3%;">add</i>&nbsp; Settings</a>-->
                     <a class="mdl-navigation__link" routerLink="cart" routerLinkActive='is-active'><i class="material-icons">shopping_cart</i> <span class="badge" style="background-color: #fb568f;position:  absolute;">{{globals.cart.quantity}}</span> &nbsp;&nbsp;Cart</a>
                     <a class="mdl-navigation__link" routerLink="about.html" routerLinkActive='is-active'><i class="material-icons" style="margin-bottom: 3%;">people_outline</i>&nbsp; About</a>
                     <a class="mdl-navigation__link" routerLink="contact.html" routerLinkActive='is-active'><i class="material-icons" style="margin-bottom: 3%;">phone</i>&nbsp;Contact</a>
@@ -26,7 +26,7 @@
         <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
                     <a class="mdl-navigation__link" routerLink="buyProduct" routerLinkActive='is-active'><i class="material-icons" style="margin-bottom: 3%;">whatshot</i>&nbsp;Products</a>
-                    <a class="mdl-navigation__link" routerLink="settings" routerLinkActive='is-active'><i class="material-icons" style="margin-bottom: 3%;">add</i>&nbsp;Add Product</a>
+<!--                    <a class="mdl-navigation__link" routerLink="settings" routerLinkActive='is-active'><i class="material-icons" style="margin-bottom: 3%;">add</i>&nbsp;Add Product</a>-->
                     <a class="mdl-navigation__link" routerLink="cart" routerLinkActive='is-active'><i class="material-icons">shopping_cart</i> <span class="badge" style="background-color: #fb568f;position:  absolute;margin-left: -7%;margin-top: -3%;">{{globals.cart.quantity}}</span> &nbsp;Cart</a>
                     <a class="mdl-navigation__link" routerLink="about.html" routerLinkActive='is-active'><i class="material-icons" style="margin-bottom: 3%;">people_outline</i>&nbsp;About</a>
                     <a class="mdl-navigation__link" routerLink="contact.html" routerLinkActive='is-active'><i class="material-icons" style="margin-bottom: 3%;">phone</i>&nbsp;Contact</a>
@@ -39,7 +39,8 @@
             
         <div class="jumbotron" style="margin-bottom:  0px !important;height:  100%;min-height: 500px;">
             <div class="container" [@routerTransition]="getState(o)" >
-                    <router-outlet #o="outlet"></router-outlet>
+                    <router-outlet #o="outlet">
+                    </router-outlet>
                     <router-outlet name="loginPopUp"></router-outlet>
                     </div>
                 </div>
